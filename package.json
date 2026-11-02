@@ -1,1 +1,15 @@
-{"name":"desa-harapan-jaya","version":"1.0.0","private":true,"scripts":{"start":"node server.js"},"engines":{"node":">=18"}}
+{
+  "name": "desa-virtual",
+  "version": "1.0.0",
+  "description": "Desa Harapan Jaya Virtual",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
