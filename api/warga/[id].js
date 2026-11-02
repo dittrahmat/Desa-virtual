@@ -1,0 +1,2 @@
+const {db,initDb}=require("../../lib/db");
+module.exports=async(req,res)=>{if(req.method!=="DELETE")return res.status(405).json({error:"Method tidak diizinkan"});const token=process.env.ADMIN_TOKEN||"";if(!token||req.headers.authorization!=="Bearer "+token)return res.status(401).json({error:"Akses admin ditolak"});const id=String(req.query.id||"");try{await initDb();await db().query("DELETE FROM warga WHERE id=$1",[id]);return res.status(200).json({ok:1})}catch(e){console.error(e);return res.status(500).json({error:"Gagal menghapus warga"})}};
